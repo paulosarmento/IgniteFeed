@@ -3,17 +3,18 @@ export function Post() {
   return (
     <article className={styles.post}>
       <header>
-        <div className={styles.author}>Author</div>
-        <img
-          className={styles.avatar}
-          src="https://github.com/paulosarmento.png"
-        />
-        <div className={styles.authorInfo}>
-          <strong>Paulo Sarmento</strong>
-          <span>Web Developer</span>
+        <div className={styles.author}>
+          <img
+            className={styles.avatar}
+            src="https://github.com/paulosarmento.png"
+          />
+          <div className={styles.authorInfo}>
+            <strong>Paulo Sarmento</strong>
+            <span>Web Developer</span>
+          </div>
         </div>
 
-        <time title="20 de Dezembro às 00:11" dateTime="2022-20-12 00:12:00">
+        <time title="20 de Dezembro às 00:18" dateTime="2022-20-12 00:18:00">
           Publicado há 1h
         </time>
       </header>
@@ -26,11 +27,12 @@ export function Post() {
         </p>
 
         <p>
-          👉<a href=""> jane.design/doctorcare</a>
+          <a href="">👉 jane.design/doctorcare</a>
         </p>
 
         <p>
-          <a href=""> #novoprojeto #nlw #</a>
+          <a href=""> #novoprojeto</a> <a href=""> #nlw </a>{" "}
+          <a href="">#rocketseat</a>{" "}
         </p>
       </div>
     </article>
