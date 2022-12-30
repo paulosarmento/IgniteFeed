@@ -7,7 +7,7 @@ import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
 export function Post({ author, publishedAt, content }) {
-  const [comments, setComments] = useState(["post muito bacana, hein?!"]);
+  const [comments, setComments] = useState([]);
 
   const [newCommentText, setNewCommentText] = useState("");
 
@@ -56,10 +56,10 @@ export function Post({ author, publishedAt, content }) {
       <div className={styles.content}>
         {content.map((line) => {
           if (line.type === "paragraph") {
-            return <p>{line.content}</p>;
+            return <p key={line.content}>{line.content}</p>;
           } else if (line.type === "link") {
             return (
-              <p>
+              <p key={line.content}>
                 <a>{line.content}</a>
               </p>
             );
@@ -79,8 +79,8 @@ export function Post({ author, publishedAt, content }) {
         </footer>
       </form>
       <div className={styles.commentList}>
-        {comments.map((comment) => {
-          return <Comment content={comment} />;
+        {comments.map((comment, index) => {
+          return <Comment key={index} content={comment} />;
         })}
       </div>
     </article>
